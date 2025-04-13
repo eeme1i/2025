@@ -81,21 +81,29 @@ function Knowledge({ knowledge }: { knowledge: Skill[] }) {
 }
 
 function Time() {
-	const [time, setTime] = useState(new Date());
+	const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
 	useEffect(() => {
+		// Set the initial time only on the client after mount
+		setCurrentTime(new Date());
+
 		// Update time every minute (60000ms)
-		const intervalId = setInterval(() => setTime(new Date()), 60000);
+		const intervalId = setInterval(() => setCurrentTime(new Date()), 60000);
 
 		// Clean up the interval when component unmounts
 		return () => clearInterval(intervalId);
 	}, []);
 
+	// Render nothing or a placeholder during SSR/initial client render
+	if (!currentTime) {
+		return null; // Or a placeholder like '--:--'
+	}
+
 	return (
 		<span>
-			{time.getHours().toString().padStart(2, "0")}
+			{currentTime.getHours().toString().padStart(2, "0")}
 			<span className="blink">:</span>
-			{time.getMinutes().toString().padStart(2, "0")}
+			{currentTime.getMinutes().toString().padStart(2, "0")}
 		</span>
 	);
 }
