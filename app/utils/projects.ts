@@ -36,7 +36,7 @@ export const projects: Project[] = [
 	{
 		title: "sahko",
 		description: "analyse data of finland's electricity grid",
-		link: "https://sahko.eemeli.co",
+		link: "https://sahko.eeru.net",
 		tags: ["remix/react", "development", "ui/ux design"],
 	},
 	{
