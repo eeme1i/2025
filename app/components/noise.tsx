@@ -139,7 +139,7 @@ export function Noise() {
       // Dynamic font size based on container size
       const minSize = 8;
       const maxSize = 20;
-      const fontSize = Math.max(minSize, Math.min(maxSize, Math.min(displayWidth, displayHeight) / 60));
+      const fontSize = Math.max(minSize, Math.min(maxSize, Math.min(displayWidth, displayHeight) / 30));
       
       return {
         displayWidth,
@@ -147,8 +147,8 @@ export function Noise() {
         canvasWidth,
         canvasHeight,
         fontSize,
-        cellWidth: fontSize * 0.6,
-        cellHeight: fontSize * 1.2,
+        cellWidth: fontSize * 1.2,
+        cellHeight: fontSize * 2.4,
         dpr
       };
     };
