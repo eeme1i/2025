@@ -6,6 +6,7 @@ import type { Route } from "./+types/home";
 import { contacts } from "~/utils/contacts";
 import { useState, useEffect, Fragment } from "react";
 import Link from "~/components/Link";
+import { Noise } from "~/components/noise";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -17,12 +18,17 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
 	return (
 		<div className="flex flex-col gap-8">
-			<h1 className="text-4xl">eemeli ruohomäki</h1>
-			<section className="flex flex-col gap-1">
-				<p>a computer science student who enjoys making modest websites.</p>
-				<p>
-					based in Tampere, Finland, where it's currently <Time />.
-				</p>
+			<section className="flex gap-4">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-4xl">eemeli ruohomäki</h1>
+          <div className="flex flex-col gap-1">
+            <p>a computer science student who enjoys making modest websites.</p>
+            <p>
+              based in Tampere, Finland, where it's currently <Time />.
+            </p>
+          </div>
+        </div>
+        <div className="w-full"><Noise /></div>
 			</section>
 			<section className="flex flex-col gap-4">
 				<h2>projects</h2>
@@ -47,6 +53,9 @@ export default function Home() {
 					))}
 				</div>
 			</section>
+      <section className="w-full h-64 text-white">
+        <Noise />
+      </section>
 		</div>
 	);
 }
