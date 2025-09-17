@@ -4,9 +4,9 @@ import Link from "./Link";
 export function ProjectItem({ title, description, tags, link }: Project) {
   return (
     <div className="flex flex-col gap-2 border border-neutral-700 p-2 min-w-64 h-64">
-      <div className="flex flex-col gap-2 flex-1 overflow-y-scroll">
+      <div className="flex flex-col gap-2 flex-1 overflow-y-auto">
         <h3 className="tracking-tight ">{title}</h3>
-        {description && <p className="overflow-y-scroll">{description}</p>}
+        {description && <p className="overflow-y-auto">{description}</p>}
         {tags && tags.length > 0 && (
           <div className="flex gap-1 flex-wrap">
             {tags.map((tag) => (
