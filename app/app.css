@@ -1,19 +1,21 @@
 @import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
 
 @theme {
-  --font-sans: "JetBrains Mono", monospace, ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans:
+		"JetBrains Mono", monospace, ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html,
 body {
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		color-scheme: dark;
+	}
 }
 
 h1 {
-  @apply text-white;
+	@apply text-white;
 }
 
 h2,
@@ -21,20 +23,134 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-white font-bold;
+	@apply text-white font-bold;
 }
 
 @keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 .blink {
-  animation: blink 2s steps(1) infinite;
-  display: inline-block;
+	animation: blink 2s steps(1) infinite;
+	display: inline-block;
+}
+
+/* Blog prose styles */
+.prose {
+	line-height: 1.75;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 700;
+}
+
+.prose h2 {
+	font-size: 1.5rem;
+	border-bottom: 1px solid rgb(38 38 38);
+	padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+	font-size: 1.25rem;
+}
+
+.prose p {
+	margin-bottom: 1.25rem;
+}
+
+.prose a {
+	color: #60a5fa;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	transition: color 0.2s;
+}
+
+.prose a:hover {
+	color: #93c5fd;
+}
+
+.prose ul,
+.prose ol {
+	margin-bottom: 1.25rem;
+	padding-left: 1.5rem;
+}
+
+.prose ul {
+	list-style-type: disc;
+}
+
+.prose ol {
+	list-style-type: decimal;
+}
+
+.prose li {
+	margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+	border-left: 4px solid rgb(64 64 64);
+	padding-left: 1rem;
+	margin: 1.5rem 0;
+	color: rgb(163 163 163);
+	font-style: italic;
+}
+
+.prose code {
+	background: rgb(38 38 38);
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.25rem;
+	font-size: 0.875em;
+}
+
+.prose pre {
+	background: rgb(23 23 23);
+	border: 1px solid rgb(38 38 38);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	overflow-x: auto;
+	margin: 1.5rem 0;
+}
+
+.prose pre code {
+	background: none;
+	padding: 0;
+	border-radius: 0;
+}
+
+.prose img {
+	border-radius: 0.5rem;
+	margin: 1.5rem 0;
+}
+
+.prose hr {
+	border-color: rgb(64 64 64);
+	margin: 2rem 0;
+}
+
+.prose table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5rem 0;
+}
+
+.prose th,
+.prose td {
+	border: 1px solid rgb(64 64 64);
+	padding: 0.5rem 1rem;
+	text-align: left;
+}
+
+.prose th {
+	background: rgb(38 38 38);
 }

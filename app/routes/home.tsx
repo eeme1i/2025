@@ -19,16 +19,25 @@ export default function Home() {
 	return (
 		<div className="flex flex-col gap-8">
 			<section className="flex gap-4">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl">eemeli ruohomäki</h1>
-          <div className="flex flex-col gap-1">
-            <p>a computer science student who enjoys making modest websites.</p>
-            <p>
-              based in Tampere, Finland, where it's currently <Time />.
-            </p>
-          </div>
-        </div>
-        <div className="w-full"><Noise /></div>
+				<div className="flex flex-col gap-4">
+					<h1 className="text-4xl">eemeli ruohomäki</h1>
+					<div className="flex flex-col gap-1">
+						<p>a computer science student who enjoys making modest websites.</p>
+						<p>
+							based in Tampere, Finland, where it's currently <Time />.
+						</p>
+					</div>
+				</div>
+				<div className="w-full">
+					<Noise />
+				</div>
+			</section>
+			<section className="flex flex-col gap-4">
+				<h2>blog</h2>
+				<p>
+					i write about web development, projects, and random thoughts.{" "}
+					<Link href="/blog">read the blog -{">"}</Link>
+				</p>
 			</section>
 			<section className="flex flex-col gap-4">
 				<h2>projects</h2>
@@ -53,9 +62,9 @@ export default function Home() {
 					))}
 				</div>
 			</section>
-      <section className="w-full h-64 text-white">
-        <Noise />
-      </section>
+			<section className="w-full h-64 text-white">
+				<Noise />
+			</section>
 		</div>
 	);
 }
