@@ -4,27 +4,20 @@ export const projects: Project[] = [
 	{
 		title: "eeru.net",
 		description: "my personal website",
-		link: "https://eemeli.co",
+		link: "https://eeru.net",
 		tags: ["react", "react-router", "development", "ui/ux design"],
+	},
+	{
+		title: "home",
+		description: "personal browser homepage using rust+svelte",
+		link: "https://github.com/eeme1i/dashboard",
+		tags: ["rust", "svelte", "development", "ui/ux design"],
 	},
 	{
 		title: "cash",
 		tags: ["svelte", "auth", "database", "ui/ux design"],
 		description: "a simple and fast app to track your expenses",
 		link: "https://cash.eeru.net",
-	},
-	{
-		title: "travel",
-		description: "app to plan your trips with a llm travel agent",
-		link: "https://travel.eeru.net",
-		tags: ["svelte", "api", "ui/ux design"],
-	},
-	{
-		title: "wiki",
-		description:
-			"app to learn about different topics via random wikipedia articles with a llm",
-		link: "https://wiki.eeru.net",
-		tags: ["svelte", "api", "ui/ux design"],
 	},
 	{
 		title: "write",
@@ -38,6 +31,19 @@ export const projects: Project[] = [
 		description: "analyse data of finland's electricity grid",
 		link: "https://sahko.eeru.net",
 		tags: ["remix/react", "development", "ui/ux design"],
+	},
+	{
+		title: "travel",
+		description: "app to plan your trips with a llm travel agent",
+		link: "https://travel.eeru.net",
+		tags: ["svelte", "api", "ui/ux design"],
+	},
+	{
+		title: "wiki",
+		description:
+			"app to learn about different topics via random wikipedia articles with a llm",
+		link: "https://wiki.eeru.net",
+		tags: ["svelte", "api", "ui/ux design"],
 	},
 	{
 		title: "thevoid",

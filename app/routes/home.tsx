@@ -1,4 +1,4 @@
-import { ProjectsCarousel } from "~/components/Projects";
+import { ProjectsCarousel } from "~/components/projects";
 import { projects } from "~/utils/projects";
 import { skills } from "~/utils/knowledge";
 import type { Skill } from "~/utils/types";
