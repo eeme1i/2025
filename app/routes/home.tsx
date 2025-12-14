@@ -1,5 +1,5 @@
 import { ProjectsCarousel } from "~/components/projects";
-import { projects } from "~/utils/projects";
+import { publicProjects } from "~/utils/projects";
 import { skills } from "~/utils/knowledge";
 import type { Skill } from "~/utils/types";
 import type { Route } from "./+types/home";
@@ -41,7 +41,7 @@ export default function Home() {
 			</section>
 			<section className="flex flex-col gap-4">
 				<h2>projects</h2>
-				<ProjectsCarousel projects={projects} />
+				<ProjectsCarousel projects={publicProjects} />
 			</section>
 			<section className="flex flex-col gap-4">
 				<h2>knowledge</h2>

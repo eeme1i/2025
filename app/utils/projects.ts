@@ -1,6 +1,6 @@
 import type { Project } from "./types";
 
-export const projects: Project[] = [
+export const publicProjects: Project[] = [
 	{
 		title: "eeru.net",
 		description: "my personal website",
