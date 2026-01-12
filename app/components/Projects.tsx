@@ -3,7 +3,7 @@ import Link from "./Link";
 
 export function ProjectItem({ title, description, tags, link }: Project) {
 	return (
-		<div className="flex flex-col border-r border-y last:border-r-0 first:border-l border-neutral-700 p-2 min-w-72 h-64">
+		<div className="flex flex-col border-r border-y last:border-r first:border-l border-neutral-700 p-2 min-w-72 h-64">
 			<div className="flex flex-col gap-2 flex-1 overflow-y-auto">
 				<h3 className="tracking-tight ">{title}</h3>
 				{description && <p className="overflow-y-auto">{description}</p>}

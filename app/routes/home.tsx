@@ -7,6 +7,7 @@ import { contacts } from "~/utils/contacts";
 import { useState, useEffect, Fragment } from "react";
 import Link from "~/components/Link";
 import { Noise } from "~/components/noise";
+import Art from "~/components/art";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -64,6 +65,9 @@ export default function Home() {
 			</section>
 			<section className="w-full h-64 text-white">
 				<Noise />
+			</section>
+			<section className="w-full">
+				<Art />
 			</section>
 		</div>
 	);

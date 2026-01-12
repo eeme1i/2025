@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const publicProjects: Project[] = [
 	{
 		title: "eeru.net",
-		description: "my personal website",
+		description: "my personal website (you are here now)",
 		link: "https://eeru.net",
 		tags: ["react", "react-router", "development", "ui/ux design"],
 	},
