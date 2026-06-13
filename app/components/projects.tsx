@@ -1,5 +1,5 @@
 import type { Project } from "~/utils/types";
-import Link from "./Link";
+import Link from "./custom-link";
 
 export function ProjectItem({ title, description, tags, link }: Project) {
 	return (

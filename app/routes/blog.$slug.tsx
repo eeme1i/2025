@@ -1,7 +1,8 @@
-import { Link, data } from "react-router";
+import { data } from "react-router";
 import { getPostBySlug, getAllPosts } from "~/utils/blog.server";
 import type { Route } from "./+types/blog.$slug";
 import { Noise } from "~/components/noise";
+import CustomLink from "~/components/custom-link";
 
 export function meta({ data }: Route.MetaArgs) {
 	if (!data) {
@@ -39,12 +40,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 		<div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
 			{/* Navigation */}
 			<header className="flex flex-col gap-4">
-				<Link
-					to="/blog"
-					className="text-neutral-500 hover:text-neutral-300 transition-colors text-sm"
-				>
-					{"<"}- all posts
-				</Link>
+				<CustomLink href="/blog">{"<"}- all posts</CustomLink>
 			</header>
 
 			{/* Post header */}
@@ -79,28 +75,18 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 			{/* Post navigation */}
 			<nav className="flex flex-col sm:flex-row gap-4 border-t border-neutral-800 pt-8">
 				{prevPost ? (
-					<Link
-						to={`/blog/${prevPost.slug}`}
-						className="flex-1 group p-4 border border-neutral-800 hover:bg-neutral-900/50 transition-all"
-					>
-						<span className="text-sm text-neutral-500">{"<"}- older</span>
-						<p className="text-neutral-300 group-hover:text-white transition-colors truncate">
-							{prevPost.title}
-						</p>
-					</Link>
+					<CustomLink href={`/blog/${prevPost.slug}`}>
+						<span className="text-sm ">{"<"}- older</span>
+						<p className="truncate">{prevPost.title}</p>
+					</CustomLink>
 				) : (
 					<div className="flex-1" />
 				)}
 				{nextPost ? (
-					<Link
-						to={`/blog/${nextPost.slug}`}
-						className="flex-1 group p-4 border border-neutral-800 hover:bg-neutral-900/50 transition-all text-right"
-					>
-						<span className="text-sm text-neutral-500">newer -{">"}</span>
-						<p className="text-neutral-300 group-hover:text-white transition-colors truncate">
-							{nextPost.title}
-						</p>
-					</Link>
+					<CustomLink href={`/blog/${nextPost.slug}`}>
+						<span className="text-sm ">newer -{">"}</span>
+						<p className="truncate">{nextPost.title}</p>
+					</CustomLink>
 				) : (
 					<div className="flex-1" />
 				)}

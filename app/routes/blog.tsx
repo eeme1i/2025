@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { getAllPosts } from "~/utils/blog.server";
 import type { Route } from "./+types/blog";
 import { Noise } from "~/components/noise";
+import CustomLink from "~/components/custom-link";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -22,12 +23,7 @@ export default function Blog({ loaderData }: Route.ComponentProps) {
 		<div className="flex flex-col gap-8 max-w-3xl mx-auto w-full">
 			{/* Header */}
 			<header className="flex flex-col gap-4">
-				<Link
-					to="/"
-					className="text-neutral-500 hover:text-neutral-300 transition-colors text-sm"
-				>
-					{"<"}- back home
-				</Link>
+				<CustomLink href="/">{"<"}- back home</CustomLink>
 				<h1 className="text-4xl">blog</h1>
 				<p className="text-neutral-400">
 					random thoughts, tutorials, and things i find interesting.
@@ -42,7 +38,7 @@ export default function Blog({ loaderData }: Route.ComponentProps) {
 					</div>
 				) : (
 					<div className="flex flex-col">
-						{posts.map((post, index) => (
+						{posts.map((post, _) => (
 							<Link
 								key={post.slug}
 								to={`/blog/${post.slug}`}

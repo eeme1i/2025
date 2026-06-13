@@ -1,13 +1,13 @@
-import { ProjectsCarousel } from "~/components/Projects";
 import { publicProjects } from "~/utils/projects";
 import { skills } from "~/utils/knowledge";
 import type { Skill } from "~/utils/types";
 import type { Route } from "./+types/home";
 import { contacts } from "~/utils/contacts";
 import { useState, useEffect, Fragment } from "react";
-import Link from "~/components/Link";
+import Link from "~/components/custom-link";
 import { Noise } from "~/components/noise";
 import Art from "~/components/art";
+import { ProjectsCarousel } from "~/components/projects";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -25,7 +25,7 @@ export default function Home() {
 					<div className="flex flex-col gap-1">
 						<p>a computer science student who enjoys making modest websites.</p>
 						<p>
-							based in Tampere, Finland, where it's currently <Time />.
+							based in finland, where it's currently <Time />.
 						</p>
 					</div>
 				</div>
