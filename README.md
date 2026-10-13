@@ -1,87 +1,46 @@
-# Welcome to React Router!
+# Personal website
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A static portfolio and Markdown blog built with React Router.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Development
 
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
+```sh
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+## Production
 
-## Building for Production
-
-Create a production build:
-
-```bash
+```sh
 npm run build
+npm run start
 ```
 
-## Deployment
+`start` previews the static build locally. Deploy `build/client` to a static host.
+There is no production Node server or Netlify rendering function.
+For direct visits in Vite's local preview, use directory URLs such as `/blog/`
+and `/blog/hello-blog/`. Netlify handles the directory URLs without the trailing
+slash as well. Vite's preview fallback is not the production 404 behavior.
 
-### Docker Deployment
+The homepage, blog index, and every `content/blog/*.md` post are rendered at build
+time, including their loader data. Adding or editing a post requires a rebuild
+and deployment. Browser animations and interactive components still run after
+hydration.
 
-To build and run using Docker:
+## Netlify
 
-```bash
-docker build -t my-app .
+`netlify.toml` sets the build command and publish directory. Do not add a
+catch-all rewrite to a server function or SPA fallback: existing pages are
+static files, and unknown URLs should return the static `public/404.html` page.
 
-# Run the container
-docker run -p 3000:3000 my-app
+After deploying, verify direct visits to `/blog` and each post and check that
+the deploy no longer contains the **React Router server handler** function.
+Static requests still count toward bandwidth and any applicable web-request
+meter, but do not invoke a rendering function.
+
+## Docker
+
+```sh
+docker build -t personal-site .
+docker run --rm -p 3000:80 personal-site
 ```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.

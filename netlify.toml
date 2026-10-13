@@ -1,0 +1,5 @@
+[build]
+  command = "npm run build"
+  publish = "build/client"
+
+# Unknown paths use a static 404 rather than a server function or SPA rewrite.

@@ -1,7 +1,13 @@
 import type { Config } from "@react-router/dev/config";
+import { readdirSync } from "node:fs";
 
 export default {
-  // Config options...
-  // Server-side render by default, to enable SPA mode set this to `false`
-  ssr: true,
+  ssr: false,
+  prerender: [
+    "/",
+    "/blog",
+    ...readdirSync(new URL("./content/blog/", import.meta.url))
+      .filter((file) => file.endsWith(".md"))
+      .map((file) => `/blog/${file.slice(0, -3)}`),
+  ],
 } satisfies Config;
